@@ -1,0 +1,160 @@
+{
+
+  "wotw" : [
+
+      {
+        "name": "Colossus of Rhodes",
+        "location" : {
+          "lat": 36.451722,
+          "lng": 28.225215
+        },
+        "status": "Demolished",
+        "age": "Ancient"
+      },
+      {
+        "name": "The Great Pyramid of Giza",
+        "location" : {
+          "lat": 29.979235,
+          "lng": 31.134202
+        },
+        "status": "exist",
+        "age": "Ancient"
+      },
+      {
+        "name": "Hanging Gardens of Babylon",
+        "location" : {
+          "lat": 32.6432427,
+          "lng": 44.1802464
+        },
+        "status": "Demolished",
+        "age": "Ancient"
+      },
+      {
+        "name": "Lighthouse of Alexandria",
+        "location" : {
+          "lat": 31.1981086,
+          "lng": 29.6837276
+        },
+        "status": "Demolished",
+        "age": "Ancient"
+      },
+      {
+        "name": "Mausoleum at Halicarnassus",
+        "location" : {
+          "lat": 37.038132,
+          "lng": 27.424385
+        },
+        "status": "Demolished",
+        "age": "Ancient"
+      },
+      {
+        "name": "Statue of Zeus at Olympia",
+        "location" : {
+          "lat": 38.099974,
+          "lng": 21.583320
+        },
+        "status": "Demolished",
+        "age": "Ancient"
+      },
+      {
+        "name": "The Temple of Artemis",
+        "location" : {
+          "lat": 37.949739,
+          "lng": 27.364031
+        },
+        "status": "Demolished",
+        "age": "Ancient"
+      },
+      {
+        "name": "Colosseum",
+        "location" : {
+          "lat": 41.890210,
+          "lng": 12.492231
+        },
+        "status": "exist",
+        "age": "New"
+      },
+      {
+        "name": "Great Wall of China",
+        "location" : {
+          "lat": 40.431908,
+          "lng": 116.570375
+        },
+        "status": "exist",
+        "age": "New"
+      },
+      {
+        "name": "Hagia Sophia",
+        "location" : {
+          "lat": 41.008583,
+          "lng": 28.980175
+        },
+        "status": "exist",
+        "age": "New"
+      },
+      {
+        "name": "Leaning Tower of Pisa",
+        "location" : {
+          "lat": 43.722952,
+          "lng": 10.396597
+        },
+        "status": "exist",
+        "age": "New"
+      },
+      {
+        "name": "Porcelain Tower of Nanjing",
+        "location" : {
+          "lat": 32.009386,
+          "lng": 118.783343
+        },
+        "status": "exist",
+        "age": "New"
+      },
+      {
+        "name": "Petra",
+        "location" : {
+          "lat": 30.328454,
+          "lng": 35.444362
+        },
+        "status": "exist",
+        "age": "New"
+      },
+      {
+        "name": "Chichen Itza",
+        "location" : {
+          "lat": 20.684285,
+          "lng": -88.567783
+        },
+        "status": "exist",
+        "age": "New"
+      },
+      {
+        "name": "Machu Picchu",
+        "location" : {
+          "lat": -13.163141,
+          "lng": -72.544963
+        },
+        "status": "exist",
+        "age": "New"
+      },
+      {
+        "name": "Taj Mahal",
+        "location" : {
+          "lat": 27.1745803,
+          "lng": 78.042096
+        },
+        "status": "exist",
+        "age": "New"
+      },
+      {
+        "name": "Christ the Redeemer",
+        "location" : {
+          "lat": 36.059922,
+          "lng": -95.953907
+        },
+        "status": "exist",
+        "age": "New"
+      },
+
+      ]
+}
