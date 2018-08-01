@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {Map, GoogleApiWrapper} from 'google-maps-react';
 
-class MyMap extends React.Component {
-
-  render (
+export class MapContainer extends Component {
+  render() {
     return (
-
-      
-
-
-
-
-    )
-  )
-
+      <Map google={this.props.google} zoom={14}>
+      </Map>
+    );
+  }
 }
 
+const LoadingContainer = (props) => (
+  <div>Fancy loading container!</div>
+)
 
-export default Map
+export default GoogleApiWrapper({
+  apiKey: (YOUR_GOOGLE_API_KEY_GOES_HERE),
+  LoadingContainer: LoadingContainer
+})(MapContainer)
