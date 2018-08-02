@@ -7,7 +7,8 @@
           "lng": 28.225215
         },
         "status": "Demolished",
-        "age": "Ancient"
+        "age": "Ancient",
+        "image": "/img/colossus.png"
       },
       {
         "name": "The Great Pyramid of Giza",
@@ -16,7 +17,8 @@
           "lng": 31.134202
         },
         "status": "exist",
-        "age": "Ancient"
+        "age": "Ancient",
+        "image": "/img/pyramid.png"
       },
       {
         "name": "Hanging Gardens of Babylon",
@@ -25,7 +27,8 @@
           "lng": 44.1802464
         },
         "status": "Demolished",
-        "age": "Ancient"
+        "age": "Ancient",
+        "image": "/img/garden.png"
       },
       {
         "name": "Lighthouse of Alexandria",
@@ -34,7 +37,8 @@
           "lng": 29.6837276
         },
         "status": "Demolished",
-        "age": "Ancient"
+        "age": "Ancient",
+        "image": "/img/lighthouse.png"
       },
       {
         "name": "Mausoleum at Halicarnassus",
@@ -43,7 +47,8 @@
           "lng": 27.424385
         },
         "status": "Demolished",
-        "age": "Ancient"
+        "age": "Ancient",
+        "image": "/img/mausoleum.png"
       },
       {
         "name": "Statue of Zeus at Olympia",
@@ -52,7 +57,8 @@
           "lng": 21.583320
         },
         "status": "Demolished",
-        "age": "Ancient"
+        "age": "Ancient",
+        "image": "/img/zeus.png"
       },
       {
         "name": "The Temple of Artemis",
@@ -61,7 +67,8 @@
           "lng": 27.364031
         },
         "status": "Demolished",
-        "age": "Ancient"
+        "age": "Ancient",
+        "image": "/img/artemis.png"
       },
       {
         "name": "Colosseum",
@@ -70,7 +77,8 @@
           "lng": 12.492231
         },
         "status": "exist",
-        "age": "New"
+        "age": "New",
+        "image": "/img/colosseum.png"
       },
       {
         "name": "Great Wall of China",
@@ -79,7 +87,8 @@
           "lng": 116.570375
         },
         "status": "exist",
-        "age": "New"
+        "age": "New",
+        "image": "/img/wall.png"
       },
       {
         "name": "Hagia Sophia",
@@ -88,7 +97,8 @@
           "lng": 28.980175
         },
         "status": "exist",
-        "age": "New"
+        "age": "New",
+        "image": "/img/sofia.png"
       },
       {
         "name": "Leaning Tower of Pisa",
@@ -97,7 +107,8 @@
           "lng": 10.396597
         },
         "status": "exist",
-        "age": "New"
+        "age": "New",
+        "image": "/img/pisa.png"
       },
       {
         "name": "Porcelain Tower of Nanjing",
@@ -106,7 +117,8 @@
           "lng": 118.783343
         },
         "status": "exist",
-        "age": "New"
+        "age": "New",
+        "image": "/img/nanjing.png"
       },
       {
         "name": "Petra",
@@ -115,7 +127,8 @@
           "lng": 35.444362
         },
         "status": "exist",
-        "age": "New"
+        "age": "New",
+        "image": "/img/petra.png"
       },
       {
         "name": "Chichen Itza",
@@ -124,7 +137,8 @@
           "lng": -88.567783
         },
         "status": "exist",
-        "age": "New"
+        "age": "New",
+        "image": "/img/itza.png"
       },
       {
         "name": "Machu Picchu",
@@ -133,7 +147,8 @@
           "lng": -72.544963
         },
         "status": "exist",
-        "age": "New"
+        "age": "New",
+        "image": "/img/picchu.png"
       },
       {
         "name": "Taj Mahal",
@@ -142,16 +157,18 @@
           "lng": 78.042096
         },
         "status": "exist",
-        "age": "New"
+        "age": "New",
+        "image": "/img/taj.png"
       },
       {
         "name": "Christ the Redeemer",
         "location" : {
-          "lat": 36.059922,
-          "lng": -95.953907
+          "lat": -22.951916,
+          "lng": -43.2104872
         },
         "status": "exist",
-        "age": "New"
+        "age": "New",
+        "image": "/img/christ.png"
       }
 
 ]
