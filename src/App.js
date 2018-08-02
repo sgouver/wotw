@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {Map, GoogleApiWrapper} from 'google-maps-react';
+import MapContainer from './MapContainer';
 
 
 
@@ -14,7 +14,7 @@ class App extends Component {
           <h1 className="App-title">Wonders of the World</h1>
         </header>
         <div>
-          <Map google={this.props.google} ></Map>
+          <MapContainer />
         </div>
 
       </div>
@@ -22,6 +22,4 @@ class App extends Component {
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyCxyj_aE9VcVXbJ0iD9vOk8rTmYwpuGGkY'
-})(App)
+export default App

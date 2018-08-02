@@ -1,6 +1,4 @@
-{
-
-  "wotw" : [
+[
 
       {
         "name": "Colossus of Rhodes",
@@ -154,7 +152,6 @@
         },
         "status": "exist",
         "age": "New"
-      },
+      }
 
-      ]
-}
+]
