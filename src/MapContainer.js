@@ -11,11 +11,12 @@ export class MapContainer extends React.Component {
 
   componentDidMount() {
     let data = require('./wotwdata.json');
+    let NewWonders =[]
     for (let i = 0; i < data.length; i++)
     {
       let obj = data[i];
-      this.setState({obj})
-    	console.log(obj);
+      NewWonders.push(obj)
+      this.setState({wonders: NewWonders})
     }
   }
 
