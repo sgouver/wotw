@@ -8,8 +8,49 @@ export class MapContainer extends React.Component {
           wonders: require('./wotwdata.json'),
           showingInfoWindow: false,
           activeMarker: {},
-          selectedPlace: {}
+          selectedPlace: {},
+          data: []
         }
+  }
+
+componentDidMount() {
+  this.getDataWiki()
+}
+//This code was borrowed by Julia Us a fellow scholarship student
+getDataWiki() {
+    let newData = [];
+    let failedData = [];
+    this.state.wonders.map((wonder) => {
+      return fetch(`https://en.wikipedia.org/w/api.php?&action=query&list=search&prop=extracts&titles&format=json&origin=*&srlimit=1&srsearch=${wonder.name}`, {
+          headers: {
+            'Origin': 'http://localhost:3000/',
+            'Content-Type': 'application/json; charset=utf-8'
+          }
+        })
+      .then(response => response.json())
+      .then(data => {
+        let url = encodeURI(`https://en.wikipedia.org/wiki/${data.query.search['0'].title}`);
+        let element = {
+          text: data.query.search['0'].snippet,
+          id: wonder.id,
+          name: wonder.name,
+          url: url,
+          readMore: 'Read more'
+        };
+        newData.push(element);
+        this.setState({data: newData});
+  		})
+      .catch(() => {
+        console.log('An error occured')
+        let element = {
+          id: wonder.id,
+          text: "Sorry, it wasn't possible to get any data from Wikipedia, please, try later",
+          readMore: "☹"
+        }
+        failedData.push(element);
+        this.setState({data: failedData});
+      })
+    })
   }
 
   onMarkerClick = (props, marker, e) =>
@@ -30,10 +71,12 @@ export class MapContainer extends React.Component {
 
   render() {
 
-  const { wonders, showingInfoWindow, activeMarker, selectedPlace } = this.state
+  const { wonders, showingInfoWindow, activeMarker, selectedPlace, data } = this.state
   const { google } = this.props
 
-  console.log(wonders)
+  console.log(selectedPlace)
+  console.log(data)
+
 
   let styles =  [
     {
@@ -235,7 +278,7 @@ export class MapContainer extends React.Component {
     {},
     {},
     {}
-]
+  ]
 
    return (
     <div>
@@ -248,31 +291,12 @@ export class MapContainer extends React.Component {
           lat: 12.9474841,
           lng: 19.2118452
         }}>
-        {
-          wonders.filter(wonder => wonder.age === 'New')
-          .map( wonder => (
-              <Marker
-                key = {wonder.location.lat}
-                onClick={this.onMarkerClick.bind(this)}
-                title={wonder.name}
-                name={wonder.name}
-                icon={{
-                    url: wonder.image,
-                    scaledSize: new google.maps.Size(50,50)
-                  }}
-                position={
-                  {lat: wonder.location.lat,
-                   lng: wonder.location.lng}
-                 }/>
-            )
-           )
-         }
          {
-           wonders.filter(wonder => wonder.age === 'Ancient')
-           .map( wonder => (
-           <Marker
+           wonders.map( (wonder, i) => (
+             <Marker
              onClick={this.onMarkerClick.bind(this)}
-             key={wonder.location.lat}
+             key={wonder.id}
+             info={data[i]}
              name={wonder.name}
              icon={{
                  url: wonder.image,
@@ -281,19 +305,22 @@ export class MapContainer extends React.Component {
              position={
                {lat: wonder.location.lat,
                 lng: wonder.location.lng}
-              } />)
+              } />
+             )
             )
         }
-             <InfoWindow
-               marker={activeMarker}
-               visible={showingInfoWindow}>
-                 <span>
-                    <h1>
-                      {selectedPlace.name}
-                    </h1>
-                 </span>
-             </InfoWindow>
-      </Map>
+        <InfoWindow
+          marker={activeMarker}
+          visible={showingInfoWindow}
+          >
+            <span>
+               <h1>
+                 {selectedPlace.name}
+               </h1>
+            </span>
+        </InfoWindow>
+
+    </Map>
     </div>
    );
  }

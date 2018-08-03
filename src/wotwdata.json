@@ -1,6 +1,7 @@
 [
 
       {
+        "id":1,
         "name": "Colossus of Rhodes",
         "location" : {
           "lat": 36.451722,
@@ -11,6 +12,7 @@
         "image": "/img/colossus.png"
       },
       {
+        "id":2,
         "name": "The Great Pyramid of Giza",
         "location" : {
           "lat": 29.979235,
@@ -21,6 +23,7 @@
         "image": "/img/pyramid.png"
       },
       {
+        "id":3,
         "name": "Hanging Gardens of Babylon",
         "location" : {
           "lat": 32.6432427,
@@ -31,6 +34,7 @@
         "image": "/img/garden.png"
       },
       {
+        "id":4,
         "name": "Lighthouse of Alexandria",
         "location" : {
           "lat": 31.1981086,
@@ -41,6 +45,7 @@
         "image": "/img/lighthouse.png"
       },
       {
+        "id":5,
         "name": "Mausoleum at Halicarnassus",
         "location" : {
           "lat": 37.038132,
@@ -51,6 +56,7 @@
         "image": "/img/mausoleum.png"
       },
       {
+        "id":6,
         "name": "Statue of Zeus at Olympia",
         "location" : {
           "lat": 38.099974,
@@ -61,6 +67,7 @@
         "image": "/img/zeus.png"
       },
       {
+        "id":7,
         "name": "The Temple of Artemis",
         "location" : {
           "lat": 37.949739,
@@ -71,6 +78,7 @@
         "image": "/img/artemis.png"
       },
       {
+        "id":8,
         "name": "Colosseum",
         "location" : {
           "lat": 41.890210,
@@ -81,6 +89,7 @@
         "image": "/img/colosseum.png"
       },
       {
+        "id":9,
         "name": "Great Wall of China",
         "location" : {
           "lat": 40.431908,
@@ -91,6 +100,7 @@
         "image": "/img/wall.png"
       },
       {
+        "id":10,
         "name": "Hagia Sophia",
         "location" : {
           "lat": 41.008583,
@@ -101,6 +111,7 @@
         "image": "/img/sofia.png"
       },
       {
+        "id":11,
         "name": "Leaning Tower of Pisa",
         "location" : {
           "lat": 43.722952,
@@ -111,6 +122,7 @@
         "image": "/img/pisa.png"
       },
       {
+        "id":12,
         "name": "Porcelain Tower of Nanjing",
         "location" : {
           "lat": 32.009386,
@@ -121,6 +133,7 @@
         "image": "/img/nanjing.png"
       },
       {
+        "id":13,
         "name": "Petra",
         "location" : {
           "lat": 30.328454,
@@ -131,6 +144,7 @@
         "image": "/img/petra.png"
       },
       {
+        "id":14,
         "name": "Chichen Itza",
         "location" : {
           "lat": 20.684285,
@@ -141,6 +155,7 @@
         "image": "/img/itza.png"
       },
       {
+        "id":15,
         "name": "Machu Picchu",
         "location" : {
           "lat": -13.163141,
@@ -151,6 +166,7 @@
         "image": "/img/picchu.png"
       },
       {
+        "id":16,
         "name": "Taj Mahal",
         "location" : {
           "lat": 27.1745803,
@@ -161,6 +177,7 @@
         "image": "/img/taj.png"
       },
       {
+        "id":17,
         "name": "Christ the Redeemer",
         "location" : {
           "lat": -22.951916,
