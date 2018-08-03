@@ -297,7 +297,7 @@ getDataWiki() {
              name={wonder.name}
              id={wonder.id}
              icon={{
-                 url: wonder.image,
+                 url: wonder.icon,
                  scaledSize: new google.maps.Size(50,50)
                }}
              position={
@@ -321,7 +321,7 @@ getDataWiki() {
                     return (
                     <span>
                       <p dangerouslySetInnerHTML={ {__html: wikiInfo} } />
-                      <button>{info.readMore}</button>
+                      <a href={info.url} target="_blank">{info.readMore}</a>
                     </span>
                     )}
                   )
