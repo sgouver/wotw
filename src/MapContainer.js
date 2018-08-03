@@ -1,11 +1,11 @@
 import React from 'react';
-import {GoogleApiWrapper, Marker, Map} from 'google-maps-react';
+import {GoogleApiWrapper, InfoWindow, Marker, Map} from 'google-maps-react';
 
 export class MapContainer extends React.Component {
   constructor(props) {
     super(props)
       this.state = {
-          wonders: [],
+          wonders: require('./wotwdata.json'),
           showingInfoWindow: false,
           activeMarker: {},
           selectedPlace: {}
@@ -28,19 +28,9 @@ export class MapContainer extends React.Component {
     }
   };
 
-  componentDidMount() {
-    let data = require('./wotwdata.json');
-    let NewWonders =[]
-    for (let i = 0; i < data.length; i++)
-    {
-      let obj = data[i];
-      NewWonders.push(obj)
-      this.setState({wonders: NewWonders})
-    }
-  }
-
   render() {
-  const { wonders } = this.state
+
+  const { wonders, showingInfoWindow, activeMarker, selectedPlace } = this.state
   const { google } = this.props
 
   console.log(wonders)
@@ -250,40 +240,40 @@ export class MapContainer extends React.Component {
    return (
     <div>
        <Map
+         onClick={this.onMapClicked}
          styles={styles}
          google={this.props.google}
          zoom={3}
-         onClick={this.onMapClicked}
          initialCenter={{
-          lat: 23.5065756,
-          lng: -27.7048251
+          lat: 12.9474841,
+          lng: 19.2118452
         }}>
         {
           wonders.filter(wonder => wonder.age === 'New')
-          .map( (wonder) => (
-          <Marker
-            onClick={this.onMarkerClick}
-            key = {wonder.location.lat}
-            title={wonder.name}
-            name={wonder.name}
-            animation={google.maps.Animation.DROP}
-            icon={{
-                url: wonder.image,
-                scaledSize: new google.maps.Size(65,65)
-              }}
-            position={
-              {lat: wonder.location.lat,
-               lng: wonder.location.lng}
-             } />)
+          .map( wonder => (
+              <Marker
+                key = {wonder.location.lat}
+                onClick={this.onMarkerClick.bind(this)}
+                title={wonder.name}
+                name={wonder.name}
+                icon={{
+                    url: wonder.image,
+                    scaledSize: new google.maps.Size(50,50)
+                  }}
+                position={
+                  {lat: wonder.location.lat,
+                   lng: wonder.location.lng}
+                 }/>
+            )
            )
          }
          {
            wonders.filter(wonder => wonder.age === 'Ancient')
-           .map( (wonder) => (
+           .map( wonder => (
            <Marker
+             onClick={this.onMarkerClick.bind(this)}
              key={wonder.location.lat}
              name={wonder.name}
-             animation={google.maps.Animation.DROP}
              icon={{
                  url: wonder.image,
                  scaledSize: new google.maps.Size(50,50)
@@ -294,6 +284,15 @@ export class MapContainer extends React.Component {
               } />)
             )
         }
+             <InfoWindow
+               marker={activeMarker}
+               visible={showingInfoWindow}>
+                 <span>
+                    <h1>
+                      {selectedPlace.name}
+                    </h1>
+                 </span>
+             </InfoWindow>
       </Map>
     </div>
    );
