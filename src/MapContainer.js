@@ -75,8 +75,6 @@ getDataWiki() {
   const { google } = this.props
 
   console.log(selectedPlace)
-  console.log(data)
-
 
   let styles =  [
     {
@@ -294,10 +292,10 @@ getDataWiki() {
          {
            wonders.map( (wonder, i) => (
              <Marker
-             onClick={this.onMarkerClick.bind(this)}
+             onClick={this.onMarkerClick}
              key={wonder.id}
-             info={data[i]}
              name={wonder.name}
+             id={wonder.id}
              icon={{
                  url: wonder.image,
                  scaledSize: new google.maps.Size(50,50)
@@ -314,9 +312,12 @@ getDataWiki() {
           visible={showingInfoWindow}
           >
             <span>
-               <h1>
-                 {selectedPlace.name}
-               </h1>
+               <p>
+                {
+                  data.filter(info => info.id === selectedPlace.id )
+                  .map(info => info.text)
+               }
+              </p>
             </span>
         </InfoWindow>
 
