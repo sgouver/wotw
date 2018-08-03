@@ -312,12 +312,20 @@ getDataWiki() {
           visible={showingInfoWindow}
           >
             <span>
-               <p>
+               <h1>{selectedPlace.name}</h1>
+
                 {
                   data.filter(info => info.id === selectedPlace.id )
-                  .map(info => info.text)
+                  .map(info =>{
+                    let wikiInfo = info.text;
+                    return (
+                    <span>
+                      <p dangerouslySetInnerHTML={ {__html: wikiInfo} } />
+                      <button>{info.readMore}</button>
+                    </span>
+                    )}
+                  )
                }
-              </p>
             </span>
         </InfoWindow>
 
