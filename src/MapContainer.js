@@ -284,6 +284,9 @@ getDataWiki() {
          onClick={this.onMapClicked}
          styles={styles}
          google={this.props.google}
+         mapTypeControl={false}
+         fullscreenControl={false}
+         scrollwheel ={false}
          zoom={3}
          initialCenter={{
           lat: 12.9474841,
