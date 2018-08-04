@@ -295,6 +295,7 @@ getDataWiki() {
              onClick={this.onMarkerClick}
              key={wonder.id}
              name={wonder.name}
+             image={wonder.image}
              id={wonder.id}
              icon={{
                  url: wonder.icon,
@@ -313,7 +314,7 @@ getDataWiki() {
           >
             <span>
                <h1>{selectedPlace.name}</h1>
-
+                 <img src={selectedPlace.image} alt={'Image of ' + selectedPlace.name + ' wonder'} />
                 {
                   data.filter(info => info.id === selectedPlace.id )
                   .map(info =>{
@@ -325,6 +326,7 @@ getDataWiki() {
                     </span>
                     )}
                   )
+
                }
             </span>
         </InfoWindow>
