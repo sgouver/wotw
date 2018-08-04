@@ -320,7 +320,7 @@ getDataWiki() {
                   .map(info =>{
                     let wikiInfo = info.text;
                     return (
-                    <span>
+                    <span  key={selectedPlace.id}>
                       <p dangerouslySetInnerHTML={ {__html: wikiInfo} } />
                       <a href={info.url} target="_blank">{info.readMore}</a>
                     </span>
@@ -338,5 +338,5 @@ getDataWiki() {
 
 }
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyCxyj_aE9VcVXbJ0iD9vOk8rTmYwpuGGkY'
+  apiKey: 'AIzaSyA6hh9kfwR-I35ZxtOKYFMB9bvWAeOcP4M'
 })(MapContainer)
