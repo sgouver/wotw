@@ -63,7 +63,7 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-h1 {
+.title {
   font-size: 1.5em;
   text-align: center;
   font-family: 'Noto Sans', sans-serif;
@@ -93,7 +93,7 @@ h1 {
 .button1 {
     background-color: white;
     color: black;
-    border: 2px solid #F7CDA9;
+    border-bottom: 5px solid #F7CDA9;
 }
 
 .button1:hover {

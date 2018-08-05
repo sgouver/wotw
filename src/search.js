@@ -8,7 +8,7 @@ return (
       <input
         className="search-contacts"
         type="text"
-        placeholder="Search by title"
+        placeholder="Search a Wonder by Title"
         value={ props.query }
         onChange={ (event) => props.updateQuery(event.target.value) }
       />

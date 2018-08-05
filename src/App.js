@@ -15,6 +15,7 @@ class App extends Component {
           selectedPlace: {},
           data: [],
           query: '',
+          sideBarOpen: true
         }
   }
 
@@ -96,6 +97,11 @@ class App extends Component {
      }
   }
 
+  ToggleSideBar = () => {
+    this.setState((prevState) => {
+      return {sideBarOpen: !prevState.sideBarOpen}
+    })
+  }
 
   render() {
     const { wonders, showingInfoWindow, activeMarker, selectedPlace, data } = this.state
@@ -115,7 +121,7 @@ class App extends Component {
             <input type="checkbox" defaultChecked/>
             <span className="slider round"></span>
           </label>
-          <h1>Wonders of the World</h1>
+          <h1 className="title">Wonders of the World</h1>
         </header>
         <div className="content">
           <div className="sidebar">
