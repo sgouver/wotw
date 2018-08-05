@@ -75,26 +75,32 @@ class App extends Component {
 
   render() {
 
+    const { wonders, showingInfoWindow, activeMarker, selectedPlace, data } = this.state
+
     return (
-      <div className="App">
+      <div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Wonders of the World</h1>
         </header>
-        <div>
-          <MapContainer
-            wonders={this.state.wonders}
-            showingInfoWindow={this.state.showingInfoWindow}
-            activeMarker={this.state.activeMarker}
-            selectedPlace={this.state.selectedPlace}
-            data={this.state.data}
-            onMapClicked={this.onMapClicked}
-            onMarkerClick={this.onMarkerClick}
-          />
-        </div>
-        <div>
-          <SideBar
-            wonders={this.state.wonders} />
+        <div className="content">
+          <div className="map">
+            <MapContainer
+              wonders={wonders}
+              showingInfoWindow={showingInfoWindow}
+              activeMarker={activeMarker}
+              selectedPlace={selectedPlace}
+              data={data}
+              onMapClicked={this.onMapClicked}
+              onMarkerClick={this.onMarkerClick}
+            />
+          </div>
+          <div className="sidebar">
+            <SideBar
+              wonders={wonders}
+              onMarkerClick={this.onMarkerClick}
+               />
+          </div>
         </div>
 
       </div>

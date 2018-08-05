@@ -1,6 +1,6 @@
 import React from 'react';
 import {GoogleApiWrapper, InfoWindow, Marker, Map} from 'google-maps-react';
-
+import './App.css';
 
 export class MapContainer extends React.Component {
 
@@ -10,7 +10,13 @@ export class MapContainer extends React.Component {
 
   console.log(selectedPlace)
 
-  let styles =  [
+  let mapCSS = {
+    width: '80%',
+    height: '500px',
+    position: 'relative',
+    float: 'right'
+  }
+  let mapTheme =  [
     {
         "elementType": "labels",
         "stylers": [
@@ -216,32 +222,33 @@ export class MapContainer extends React.Component {
     <div>
        <Map
          onClick={onMapClicked}
-         styles={styles}
+         style={mapCSS}
+         styles={mapTheme}
          google={this.props.google}
          mapTypeControl={false}
          fullscreenControl={false}
-         scrollwheel ={false}
-         zoom={3}
+         zoom={2.5}
          initialCenter={{
           lat: 12.9474841,
           lng: 19.2118452
         }}>
          {
            wonders.map( (wonder, i) => (
-             <Marker
-             onClick={onMarkerClick}
-             key={wonder.id}
-             name={wonder.name}
-             image={wonder.image}
-             id={wonder.id}
-             icon={{
-                 url: wonder.icon,
-                 scaledSize: new google.maps.Size(50,50)
-               }}
-             position={
-               {lat: wonder.location.lat,
-                lng: wonder.location.lng}
-              } />
+               <Marker
+               ref="test"
+               onClick={onMarkerClick}
+               key={wonder.id}
+               name={wonder.name}
+               image={wonder.image}
+               id={wonder.id}
+               icon={{
+                   url: wonder.icon,
+                   scaledSize: new google.maps.Size(50,50)
+                 }}
+               position={
+                 {lat: wonder.location.lat,
+                  lng: wonder.location.lng}
+                } />
              )
             )
         }

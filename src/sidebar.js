@@ -1,21 +1,33 @@
 import React from 'react';
-
+import {Marker} from 'google-maps-react';
+import './App.css';
 
 class SideBar extends React.Component {
 
   render() {
 
-    return(
+    const { wonders, onMarkerClick } = this.props
 
-      <div id="sidebar">
+    return(
+      <div>
         <ul>
         {
-
-
+          wonders.map(wonder =>
+            (
+              <li>
+                <button
+                  onClick={(e) => (
+                      this.refs['test'].//something
+                    )
+                    }
+                  >
+                  {wonder.name}</button>
+              </li>
+            )
+          )
         }
         </ul>
       </div>
-
 
     )
 
