@@ -247,7 +247,14 @@ export class MapContainer extends React.Component {
           marker={activeMarker}
           visible={showingInfoWindow}
           >
-            <span>
+            <div
+              style={{
+                width: '250px',
+                margin: 'auto',
+                textAlign: 'center',
+                display:'block',
+                fontFamily: 'Noto Sans'
+              }}>
                <h1>{selectedPlace.name}</h1>
                  <img src={selectedPlace.image} alt={'Image of ' + selectedPlace.name + ' wonder'} />
                 {
@@ -256,14 +263,22 @@ export class MapContainer extends React.Component {
                     let wikiInfo = info.text;
                     return (
                     <span  key={selectedPlace.id}>
-                      <p dangerouslySetInnerHTML={ {__html: wikiInfo} } />
-                      <a href={info.url} target="_blank">{info.readMore}</a>
+                      <p
+                        dangerouslySetInnerHTML={ {__html: wikiInfo} }
+                        style={{fontSize: '1.1em'}}
+                        />
+                      <a
+                        href={info.url}
+                        target="_blank"
+                        className="infoButton"
+                      >
+                        {info.readMore}</a>
                     </span>
                     )}
                   )
 
                }
-            </span>
+            </div>
         </InfoWindow>
     </Map>
     </div>
