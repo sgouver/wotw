@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MapContainer from './MapContainer';
-import SideBar from './sidebar';
-import Search from './search';
+import SideMenu from './sidemenu';
 import escapeRegExp from 'escape-string-regexp';
 
 class App extends Component {
@@ -117,8 +116,7 @@ class App extends Component {
     let sideMenu;
     let search;
     if (this.state.sideBarOpen) {
-      sideMenu = <SideBar />;
-      search = <Search />;
+
     }
 
     return (
@@ -131,16 +129,12 @@ class App extends Component {
           <h1 className="title">Wonders of the World</h1>
         </header>
         <div className="content">
-          <div className="sidebar">
-            <Search
-              query={this.state.query}
-              updateQuery={this.updateQuery}
-              />
-            <SideBar
-              wonders={foundWonders}
-              selectWonder={this.selectWonder}
-               />
-          </div>
+          <SideMenu
+            query={this.state.query}
+            updateQuery={this.updateQuery}
+            wonders={foundWonders}
+            selectWonder={this.selectWonder}
+            />
           <section className="map">
             <MapContainer
               wonders={foundWonders}
