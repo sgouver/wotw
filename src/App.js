@@ -112,8 +112,7 @@ class App extends Component {
     return (
       <div>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Wonders of the World</h1>
+          <h1>Wonders of the World</h1>
         </header>
         <div className="content">
           <div className="sidebar">
