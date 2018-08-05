@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import MapContainer from './MapContainer';
 import SideBar from './sidebar';
+import Search from './search';
 import escapeRegExp from 'escape-string-regexp';
 
 class App extends Component {
@@ -15,7 +16,6 @@ class App extends Component {
           selectedPlace: {},
           data: [],
           query: '',
-          searchedWonders: []
         }
   }
 
@@ -25,16 +25,10 @@ class App extends Component {
     this.getDataWiki()
   }
 
-  serachGrills = (query) => {
-    let searchedWonders
-    if (query) {
-      const match = new RegExp(escapeRegExp(query), 'i')
-      searchedWonders = this.state.wonders.filter(wonder => match.test(wonder.name))
-    } else {
-      searchedWonders = this.state.wonders
-    }
-    this.setState({searchedWonders, query})
+  updateQuery= (query) => {
+    this.setState({ query: query.trim() })
   }
+
   //This code was borrowed by Julia Us a fellow scholarship student
   getDataWiki = () => {
       let newData = [];
@@ -76,8 +70,6 @@ class App extends Component {
     if(marker !== null) {
       this.markers.push(marker)
     }
-    console.log(this.markers)
-    console.log('Marker number is' + this.markers.length);
   }
 
 
@@ -107,8 +99,15 @@ class App extends Component {
 
 
   render() {
-
     const { wonders, showingInfoWindow, activeMarker, selectedPlace, data } = this.state
+
+    let foundWonders
+    if (this.state.query) {
+      const match = new RegExp(escapeRegExp(this.state.query), 'i')
+      foundWonders = wonders.filter((wonder) => match.test(wonder.name))
+    } else {
+      foundWonders = wonders
+    }
 
     return (
       <div>
@@ -130,8 +129,12 @@ class App extends Component {
             />
           </div>
           <div className="sidebar">
+            <Search
+              query={this.state.query}
+              updateQuery={this.updateQuery}
+              />
             <SideBar
-              wonders={wonders}
+              wonders={foundWonders}
               selectWonder={this.selectWonder}
                />
           </div>
