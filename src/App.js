@@ -111,6 +111,10 @@ class App extends Component {
     return (
       <div>
         <header className="App-header">
+          <label className="switch">
+            <input type="checkbox" defaultChecked/>
+            <span className="slider round"></span>
+          </label>
           <h1>Wonders of the World</h1>
         </header>
         <div className="content">
