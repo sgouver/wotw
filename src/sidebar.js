@@ -4,6 +4,10 @@ import './App.css';
 
 class SideBar extends React.Component {
 
+  marker() {
+    document.querySelector('.gmnoprint img').click()
+  }
+
 
   render() {
 
@@ -13,13 +17,11 @@ class SideBar extends React.Component {
       <div>
         <ul>
         {
-          wonders.map((wonder, e) =>
+          wonders.map(wonder =>
             (
               <li>
                 <button
-                  onClick={
-                    document.querySelectorAll('.gmnoprint')[e.target.wonder.index].click()
-                  }
+                  onClick={this.marker}
                   >
                   {wonder.name}</button>
               </li>
