@@ -4,22 +4,22 @@ import './App.css';
 
 class SideBar extends React.Component {
 
+
   render() {
 
-    const { wonders, onMarkerClick } = this.props
+    const { wonders } = this.props
 
     return(
       <div>
         <ul>
         {
-          wonders.map(wonder =>
+          wonders.map((wonder, e) =>
             (
               <li>
                 <button
-                  onClick={(e) => (
-                      this.refs['test'].//something
-                    )
-                    }
+                  onClick={
+                    document.querySelectorAll('.gmnoprint')[e.target.wonder.index].click()
+                  }
                   >
                   {wonder.name}</button>
               </li>
