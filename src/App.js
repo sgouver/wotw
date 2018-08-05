@@ -94,6 +94,9 @@ class App extends Component {
          new newMarker.props.google.maps.event.trigger(newMarker.marker, 'click')
        }
      }
+     if (window.screen.width < 650) {
+       this.setState({sideBarOpen: false})
+     }
   }
 
   toggleSideBar = () => {
@@ -124,8 +127,9 @@ class App extends Component {
     }
 
     return (
-      <div>
+      <div className="App">
         <header className="App-header">
+          <span className="toggle">
           <label className="switch">
             <input
               type="checkbox"
@@ -134,6 +138,7 @@ class App extends Component {
             />
             <span className="slider round"></span>
           </label>
+          </span>
           <h1 className="title">Wonders of the World</h1>
         </header>
         <div className="content">

@@ -11,7 +11,7 @@ return (
         style={{
           backgroundColor: 'rgb(230, 230, 230)'
         }}
-        placeholder="Search a Wonder by Title"
+        placeholder="Search a Wonder"
         value={ props.query }
         onChange={ (event) => props.updateQuery(event.target.value) }
       />

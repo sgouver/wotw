@@ -1,3 +1,8 @@
+.App {
+  position: fixed;
+  width: 100%;
+}
+
 .App-header {
   background-color: #97B5BF;
   height: 40px;
@@ -16,12 +21,15 @@
   border-radius: 50%;
 }
 
+.toggle {
+  margin-left: 20px;
+}
+
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin-left: 20px;
 }
 
 .switch input {display:none;}
@@ -68,8 +76,9 @@ input:checked + .slider:before {
   font-size: 1.5em;
   text-align: center;
   font-family: 'Noto Sans', sans-serif;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   padding-left: 20vw;
+  padding-right: 5vw;
   display: inline-block;
   position: relative;
   margin: 0
@@ -116,7 +125,7 @@ input:checked + .slider:before {
 
 .sideMenu {
   position: relative;
-  width: 40%;
+  width: 450px;
   overflow: scroll;
   background-color: #97B5BF;
   z-index: 200;
@@ -128,7 +137,6 @@ padding: 5px 10px 5px 5px;
 }
 
 .search-top {
-  position: relative;
   width: 100%;
   top: 0;
   border-bottom: 1px solid #d5d8df;
@@ -137,7 +145,7 @@ padding: 5px 10px 5px 5px;
 
 .search-contacts {
   width: 100%;
-  padding: 20px 20px 20px 60px;
+  padding: 20px 20px 20px 10px;
   background-image: url('/public/icon/search.svg');
   background-repeat: no-repeat;
   background-position: 20px center;
@@ -166,4 +174,10 @@ padding: 5px 10px 5px 5px;
 .infoButton:hover {
     background-color:  #97B5BF;
     color: white;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 0.9em;
+  }
 }
