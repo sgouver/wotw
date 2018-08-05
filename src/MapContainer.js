@@ -8,8 +8,6 @@ export class MapContainer extends React.Component {
 
   const { wonders, onMapClicked, onMarkerClick, showingInfoWindow, activeMarker, selectedPlace, data, google } = this.props
 
-  console.log(selectedPlace)
-
   let mapCSS = {
     width: '80%',
     height: '500px',
@@ -235,8 +233,8 @@ export class MapContainer extends React.Component {
          {
            wonders.map( (wonder, i) => (
                <Marker
-               ref="test"
-               onClick={onMarkerClick}
+               ref={this.props.onMarkerCreated}
+               onClick={(props, marker) => onMarkerClick(props, marker)}
                key={wonder.id}
                name={wonder.name}
                image={wonder.image}

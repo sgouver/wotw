@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import MapContainer from './MapContainer';
 import SideBar from './sidebar';
+import escapeRegExp from 'escape-string-regexp';
 
 class App extends Component {
   constructor(props) {
@@ -12,15 +13,30 @@ class App extends Component {
           showingInfoWindow: false,
           activeMarker: {},
           selectedPlace: {},
-          data: []
+          data: [],
+          query: '',
+          searchedWonders: []
         }
   }
 
-  componentDidMount() {
+  markers = [];
+
+  componentDidMount = () => {
     this.getDataWiki()
   }
+
+  serachGrills = (query) => {
+    let searchedWonders
+    if (query) {
+      const match = new RegExp(escapeRegExp(query), 'i')
+      searchedWonders = this.state.wonders.filter(wonder => match.test(wonder.name))
+    } else {
+      searchedWonders = this.state.wonders
+    }
+    this.setState({searchedWonders, query})
+  }
   //This code was borrowed by Julia Us a fellow scholarship student
-  getDataWiki() {
+  getDataWiki = () => {
       let newData = [];
       let failedData = [];
       this.state.wonders.map((wonder) => {
@@ -56,6 +72,15 @@ class App extends Component {
       })
     }
 
+  onMarkerCreated = (marker) => {
+    if(marker !== null) {
+      this.markers.push(marker)
+    }
+    console.log(this.markers)
+    console.log('Marker number is' + this.markers.length);
+  }
+
+
   onMarkerClick = (props, marker, e) =>
   this.setState({
     selectedPlace: props,
@@ -70,6 +95,14 @@ class App extends Component {
         activeMarker: null
       })
     }
+  }
+
+  selectWonder = (wonder) => {
+     for (const newMarker of this.markers) {
+       if (newMarker.props.id === wonder.id) {
+         new newMarker.props.google.maps.event.trigger(newMarker.marker, 'click')
+       }
+     }
   }
 
 
@@ -93,12 +126,13 @@ class App extends Component {
               data={data}
               onMapClicked={this.onMapClicked}
               onMarkerClick={this.onMarkerClick}
+              onMarkerCreated={this.onMarkerCreated}
             />
           </div>
           <div className="sidebar">
             <SideBar
               wonders={wonders}
-              onMarkerClick={this.onMarkerClick}
+              selectWonder={this.selectWonder}
                />
           </div>
         </div>
