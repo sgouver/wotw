@@ -72,7 +72,7 @@ input:checked + .slider:before {
   padding-left: 20vw;
   display: inline-block;
   position: relative;
-  margin-top: -10px;
+  margin: 0
 }
 
 .button {
@@ -114,11 +114,12 @@ input:checked + .slider:before {
   background-color: rgb(44, 124, 136)
 }
 
-.sidebar {
+.sideMenu {
   position: relative;
   width: 40%;
   overflow: scroll;
   background-color: #97B5BF;
+  z-index: 200;
 }
 
 .sidebar-list {

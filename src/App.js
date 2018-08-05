@@ -96,7 +96,7 @@ class App extends Component {
      }
   }
 
-  ToggleSideBar = () => {
+  toggleSideBar = () => {
     this.setState((prevState) => {
       return {sideBarOpen: !prevState.sideBarOpen}
     })
@@ -113,28 +113,31 @@ class App extends Component {
       foundWonders = wonders
     }
 
-    let sideMenu;
-    let search;
+    let mapMenu;
     if (this.state.sideBarOpen) {
-
+      mapMenu = <SideMenu
+        query={this.state.query}
+        updateQuery={this.updateQuery}
+        wonders={foundWonders}
+        selectWonder={this.selectWonder}
+        />
     }
 
     return (
       <div>
         <header className="App-header">
           <label className="switch">
-            <input type="checkbox" defaultChecked/>
+            <input
+              type="checkbox"
+              defaultChecked
+              onClick={this.toggleSideBar}
+            />
             <span className="slider round"></span>
           </label>
           <h1 className="title">Wonders of the World</h1>
         </header>
         <div className="content">
-          <SideMenu
-            query={this.state.query}
-            updateQuery={this.updateQuery}
-            wonders={foundWonders}
-            selectWonder={this.selectWonder}
-            />
+          {mapMenu}
           <section className="map">
             <MapContainer
               wonders={foundWonders}

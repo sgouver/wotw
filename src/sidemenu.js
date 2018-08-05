@@ -6,7 +6,7 @@ import Search from './search';
 function SideMenu(props) {
 
 return(
-  <div className="sidebar">
+  <div className="sideMenu close">
     <Search
       query={props.query}
       updateQuery={props.updateQuery}
