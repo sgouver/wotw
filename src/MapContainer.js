@@ -8,12 +8,6 @@ export class MapContainer extends React.Component {
 
   const { wonders, onMapClicked, onMarkerClick, showingInfoWindow, activeMarker, selectedPlace, data, google } = this.props
 
-  let mapCSS = {
-    width: '80%',
-    height: '500px',
-    position: 'relative',
-    float: 'right'
-  }
   let mapTheme =  [
     {
         "elementType": "labels",
@@ -220,7 +214,6 @@ export class MapContainer extends React.Component {
     <div>
        <Map
          onClick={onMapClicked}
-         style={mapCSS}
          styles={mapTheme}
          google={this.props.google}
          mapTypeControl={false}

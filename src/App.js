@@ -116,18 +116,6 @@ class App extends Component {
           <h1 className="App-title">Wonders of the World</h1>
         </header>
         <div className="content">
-          <div className="map">
-            <MapContainer
-              wonders={wonders}
-              showingInfoWindow={showingInfoWindow}
-              activeMarker={activeMarker}
-              selectedPlace={selectedPlace}
-              data={data}
-              onMapClicked={this.onMapClicked}
-              onMarkerClick={this.onMarkerClick}
-              onMarkerCreated={this.onMarkerCreated}
-            />
-          </div>
           <div className="sidebar">
             <Search
               query={this.state.query}
@@ -138,6 +126,18 @@ class App extends Component {
               selectWonder={this.selectWonder}
                />
           </div>
+          <section className="map">
+            <MapContainer
+              wonders={foundWonders}
+              showingInfoWindow={showingInfoWindow}
+              activeMarker={activeMarker}
+              selectedPlace={selectedPlace}
+              data={data}
+              onMapClicked={this.onMapClicked}
+              onMarkerClick={this.onMarkerClick}
+              onMarkerCreated={this.onMarkerCreated}
+            />
+          </section>
         </div>
 
       </div>

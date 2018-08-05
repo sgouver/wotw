@@ -27,12 +27,73 @@
   to { transform: rotate(360deg); }
 }
 
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #F7CDA9;
+}
+
+.button1:hover {
+    background-color:  #97B5BF;
+    color: white;
+}
+
 .content {
-  position: relative;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.map {
   width: 100%;
+  position: relative;
+  background-color: rgb(44, 124, 136)
 }
 
 .sidebar {
   position: relative;
-  width: 30%;
+  width: 40%;
+  overflow: scroll;
+  background-color: #97B5BF;
+}
+
+.sidebar-list {
+list-style-type: none;
+padding: 5px 10px 5px 5px;
+}
+
+.search-top {
+  position: relative;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid #d5d8df;
+  display: flex;
+}
+
+.search-contacts {
+  width: 100%;
+  padding: 20px 20px 20px 60px;
+  background-image: url('/public/icon/search.svg');
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 1.2em;
+  font-size: 1.2em;
+  border: 0;
+  outline: none;
 }

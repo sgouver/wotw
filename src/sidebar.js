@@ -5,12 +5,12 @@ function SideBar(props) {
 
     return(
       <div>
-        <ul>
+        <ul className="sidebar-list">
         {
           props.wonders.map((wonder) =>
             (
               <li key={wonder.id}>
-                <button
+                <button className="button button1"
                   onClick={() => props.selectWonder(wonder)}
                   >
                   {wonder.name}</button>
