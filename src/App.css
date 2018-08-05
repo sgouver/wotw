@@ -4,6 +4,7 @@
   padding: 15px;
   color: white;
   border-bottom: 8px solid #F7CDA9;
+  display: flex;
 }
 
 /* Rounded sliders */
@@ -68,7 +69,7 @@ input:checked + .slider:before {
   text-align: center;
   font-family: 'Noto Sans', sans-serif;
   letter-spacing: 5px;
-  padding-left: 30vw;
+  padding-left: 20vw;
   display: inline-block;
   position: relative;
   margin-top: -10px;

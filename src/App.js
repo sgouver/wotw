@@ -114,6 +114,13 @@ class App extends Component {
       foundWonders = wonders
     }
 
+    let sideMenu;
+    let search;
+    if (this.state.sideBarOpen) {
+      sideMenu = <SideBar />;
+      search = <Search />;
+    }
+
     return (
       <div>
         <header className="App-header">
