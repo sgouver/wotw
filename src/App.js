@@ -3,6 +3,8 @@ import './App.css';
 import MapContainer from './MapContainer';
 import SideMenu from './sidemenu';
 import escapeRegExp from 'escape-string-regexp';
+import MenuIcon from './menuicon';
+
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +17,7 @@ class App extends Component {
           data: [],
           query: '',
           sideBarOpen: true
+
         }
   }
 
@@ -129,16 +132,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <span className="toggle">
-          <label className="switch">
-            <input
-              type="checkbox"
-              defaultChecked
-              onClick={this.toggleSideBar}
+          <MenuIcon
+            toggleBar={this.toggleSideBar}          
             />
-            <span className="slider round"></span>
-          </label>
-          </span>
           <h1 className="title">Wonders of the World</h1>
         </header>
         <div className="content">
