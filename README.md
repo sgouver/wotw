@@ -5,10 +5,10 @@ It was created from scratch as a part of Udacity's curriculum. It manifest the _
 and __Wikipedia API__ to create an interactive and informative environment.
 
 * Old 7 Wonders have this ICON
-!(https://image.ibb.co/ctYZwK/wonder_new.png)
+![oldWonders](https://image.ibb.co/ctYZwK/wonder_new.png)
 
 * Newer Wonders have this ICON
-!(https://image.ibb.co/jhfgbK/wonder_old.png)
+![NewWonders](https://image.ibb.co/jhfgbK/wonder_old.png)
 
 ## Table of Contents
 
