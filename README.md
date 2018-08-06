@@ -35,10 +35,6 @@ and __Wikipedia API__ to create an interactive and informative environment.
 * The App receives 90% in the Google audit results.
 * The `create-react-app` installed a serviceWorker by default for offline and lie-fi issues.
 
-## View Live here
-
-(https://sgouver.github.io/wotw/)
-
 ## Libraries
 
 * `google-maps-react`
