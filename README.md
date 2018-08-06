@@ -20,17 +20,10 @@ and __Wikipedia API__ to create an interactive and informative environment.
 ## Structure
 
 The project has the below structure :
-  App.js // The main page where the composition of multiple components  occur.
-    |     Most of the functionality is located here, in order to syncronise the state.
-    |
-    |__ __ MenuIcon.js // The stateless composition to create the MenuIcon
-    |       |
-    |       |___ sidebar.js // The list of the wonders in the sidemenu
-    |       |___ search.js // the search input field
-    |
-    |__ __ SideMenu.js // The stateless composition that manage the SideBar
-    |
-    |__ __ MapContainer.js // The map container where the Markers and InfoWindow is created.
+[stucture](https://drive.google.com/file/d/1NfGftZR9s1NuHB_AP4WTD3vQy3s7H3aq/view?usp=sharing)
+
+Screenshot:
+[Preview](https://drive.google.com/file/d/1GBO6OPivPmrPVq0MoZgqiW4klMrZ98G-/view?usp=sharing)
 
 ## Libraries
 
