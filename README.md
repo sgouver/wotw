@@ -4,6 +4,12 @@ The project is an interactive world map with all the new and the old Wonders of 
 It was created from scratch as a part of Udacity's curriculum. It manifest the __Google API__,
 and __Wikipedia API__ to create an interactive and informative environment.
 
+* Old 7 Wonders have this ICON
+!(https://image.ibb.co/ctYZwK/wonder_new.png)
+
+* Newer Wonders have this ICON
+!(https://image.ibb.co/jhfgbK/wonder_old.png)
+
 ## Table of Contents
 
 * [Installation](#installation)
