@@ -20,10 +20,10 @@ and __Wikipedia API__ to create an interactive and informative environment.
 ## Structure
 
 The project has the below structure :
-![structure](https://photos.app.goo.gl/FeKzmBWxtr94ANE36)
+![structure](https://image.ibb.co/mWQRQe/structure.png)
 
 Screenshot:
-![Preview](https://drive.google.com/file/d/1GBO6OPivPmrPVq0MoZgqiW4klMrZ98G-/view?usp=sharing)
+![Preview](https://preview.ibb.co/jyx6Qe/wonders_preview.jpg)
 
 ## Libraries
 
