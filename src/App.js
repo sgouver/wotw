@@ -5,6 +5,19 @@ import SideMenu from './sidemenu';
 import escapeRegExp from 'escape-string-regexp';
 import MenuIcon from './menuicon';
 
+//a function show an error message in case the Google API fails to load
+window.gm_authFailure = () => {
+  const mapSection = document.querySelector('.map');
+  mapSection.innerHTML = '';
+  mapSection.innerHTML =
+  `<div class='google-api-error'>
+    <h1>Sorry, cannot load Google Maps</h1>
+    <p>Looks like, you will have to visit the Wonders in person.</p>
+    <p>Here is a treat:</p>
+    <img src='/img/zeus.jpg' alt='image of Statue of Zeus at Olympia'/>
+  </div>`;
+}
+
 //The component to compose all the other components
 class App extends Component {
   constructor(props) {
@@ -34,7 +47,7 @@ class App extends Component {
     this.setState({ query: query.trim() })
   }
 
-  //This code was borrowed by Julia Us a fellow scholarship student
+  //This code was replicated by Julia Us a fellow scholarship student
   getDataWiki = () => {
       let newData = [];
       let failedData = [];
@@ -158,17 +171,17 @@ class App extends Component {
           {mapMenu}
           <section className="map">
             {/*Here we place the map*/}
-            <MapContainer
-              role="application"
-              wonders={foundWonders}
-              showingInfoWindow={showingInfoWindow}
-              activeMarker={activeMarker}
-              selectedPlace={selectedPlace}
-              data={data}
-              onMapClicked={this.onMapClicked}
-              onMarkerClick={this.onMarkerClick}
-              onMarkerCreated={this.onMarkerCreated}
-            />
+              <MapContainer
+                role="application"
+                wonders={foundWonders}
+                showingInfoWindow={showingInfoWindow}
+                activeMarker={activeMarker}
+                selectedPlace={selectedPlace}
+                data={data}
+                onMapClicked={this.onMapClicked}
+                onMarkerClick={this.onMarkerClick}
+                onMarkerCreated={this.onMarkerCreated}
+              />
           </section>
         </main>
         <footer

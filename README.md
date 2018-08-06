@@ -8,6 +8,7 @@ and __Wikipedia API__ to create an interactive and informative environment.
 
 * [Installation](#installation)
 * [Structure](#structure)
+* [Accessibility](#Accessibility)
 * [Libraries](#libraries)
 * [Contributing](#contributing)
 
@@ -22,6 +23,15 @@ and __Wikipedia API__ to create an interactive and informative environment.
 ![structure](https://image.ibb.co/mWQRQe/structure.png)
 
 ![Preview](https://preview.ibb.co/jyx6Qe/wonders_preview.jpg)
+
+## Accessibility && Cache
+
+* The App receives 90% in the Google audit results.
+* The `create-react-app` installed a serviceWorker by default for offline and lie-fi issues.
+
+## View Live here
+
+(https://sgouver.github.io/wotw/)
 
 ## Libraries
 

@@ -34,6 +34,11 @@ export class MapContainer extends React.Component {
                name={wonder.name}
                image={wonder.image}
                id={wonder.id}
+               animation={
+                 (selectedPlace.name === wonder.name)
+                  && google.maps.Animation.BOUNCE
+                  //The animation was used as per the instructions of google-maps-react plugin
+               }
                aria-label={`Selected the marker of + ${wonder.name}`}
                tabIndex='0'
                icon={{
@@ -89,7 +94,6 @@ export class MapContainer extends React.Component {
                     </span>
                     )}
                   )
-
                }
             </div>
         </InfoWindow>
@@ -100,5 +104,5 @@ export class MapContainer extends React.Component {
 
 }
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyA6hh9kfwR-I35ZxtOKYFMB9bvWAeOcP4M'
+  apiKey: 'AIzaSyA6hh9kfwR-'
 })(MapContainer)
