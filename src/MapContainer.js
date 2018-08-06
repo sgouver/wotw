@@ -1,220 +1,20 @@
 import React from 'react';
 import {GoogleApiWrapper, InfoWindow, Marker, Map} from 'google-maps-react';
 import './App.css';
+import MapTheme from './maptheme.json' //fetching the maptheme from SnazzyMaps
 
 export class MapContainer extends React.Component {
 
   render() {
 
+  //use a batch variable for cleaner writing
   const { wonders, onMapClicked, onMarkerClick, showingInfoWindow, activeMarker, selectedPlace, data, google } = this.props
 
-  let mapTheme =  [
-    {
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            },
-            {
-                "color": "#f49f53"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "stylers": [
-            {
-                "color": "#f9ddc5"
-            },
-            {
-                "lightness": -7
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "stylers": [
-            {
-                "color": "#813033"
-            },
-            {
-                "lightness": 43
-            }
-        ]
-    },
-    {
-        "featureType": "poi.business",
-        "stylers": [
-            {
-                "color": "#645c20"
-            },
-            {
-                "lightness": 38
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
-            {
-                "color": "#1994bf"
-            },
-            {
-                "saturation": -69
-            },
-            {
-                "gamma": 0.99
-            },
-            {
-                "lightness": 43
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#f19f53"
-            },
-            {
-                "weight": 1.3
-            },
-            {
-                "visibility": "on"
-            },
-            {
-                "lightness": 16
-            }
-        ]
-    },
-    {
-        "featureType": "poi.business"
-    },
-    {
-        "featureType": "poi.park",
-        "stylers": [
-            {
-                "color": "#645c20"
-            },
-            {
-                "lightness": 39
-            }
-        ]
-    },
-    {
-        "featureType": "poi.school",
-        "stylers": [
-            {
-                "color": "#a95521"
-            },
-            {
-                "lightness": 35
-            }
-        ]
-    },
-    {},
-    {
-        "featureType": "poi.medical",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#813033"
-            },
-            {
-                "lightness": 38
-            },
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {
-        "elementType": "labels"
-    },
-    {
-        "featureType": "poi.sports_complex",
-        "stylers": [
-            {
-                "color": "#9e5916"
-            },
-            {
-                "lightness": 32
-            }
-        ]
-    },
-    {},
-    {
-        "featureType": "poi.government",
-        "stylers": [
-            {
-                "color": "#9e5916"
-            },
-            {
-                "lightness": 46
-            }
-        ]
-    },
-    {
-        "featureType": "transit.station",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.line",
-        "stylers": [
-            {
-                "color": "#813033"
-            },
-            {
-                "lightness": 22
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "stylers": [
-            {
-                "lightness": 38
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#f19f53"
-            },
-            {
-                "lightness": -10
-            }
-        ]
-    },
-    {},
-    {},
-    {}
-  ]
-
    return (
-    <div>
+    <div  tabIndex='0'>
        <Map
          onClick={onMapClicked}
-         styles={mapTheme}
+         styles={MapTheme}
          google={this.props.google}
          mapTypeControl={false}
          fullscreenControl={false}
@@ -224,6 +24,8 @@ export class MapContainer extends React.Component {
           lng: 19.2118452
         }}>
          {
+           //looping inside all the locations to create markers
+           //Use the ref attribute to match the marker with the sidemenu list
            wonders.map( (wonder, i) => (
                <Marker
                ref={this.props.onMarkerCreated}
@@ -232,6 +34,8 @@ export class MapContainer extends React.Component {
                name={wonder.name}
                image={wonder.image}
                id={wonder.id}
+               aria-label={`Selected the marker of + ${wonder.name}`}
+               tabIndex='0'
                icon={{
                    url: wonder.icon,
                    scaledSize: new google.maps.Size(50,50)
@@ -243,10 +47,12 @@ export class MapContainer extends React.Component {
              )
             )
         }
+        {/*Populate the info window. The Infowindow automatically is linked to the Marker because of the plugin*/}
         <InfoWindow
           marker={activeMarker}
           visible={showingInfoWindow}
-          >
+          aria-label={`informations about ${selectedPlace.name}`}>
+          {/*style the infowindow*/}
             <div
               style={{
                 width: '250px',
@@ -255,22 +61,29 @@ export class MapContainer extends React.Component {
                 display:'block',
                 fontFamily: 'Noto Sans'
               }}>
-               <h1>{selectedPlace.name}</h1>
+               <h1 tabIndex='0'>{selectedPlace.name}</h1>
+               {/*fetching the image according to the location*/}
                  <img src={selectedPlace.image} alt={'Image of ' + selectedPlace.name + ' wonder'} />
                 {
+                  //additional verification to pass the elements fetched from wikipedia
                   data.filter(info => info.id === selectedPlace.id )
                   .map(info =>{
                     let wikiInfo = info.text;
                     return (
                     <span  key={selectedPlace.id}>
+                      {/*here we pass a snippet text fetched from wikipedia*/}
                       <p
                         dangerouslySetInnerHTML={ {__html: wikiInfo} }
                         style={{fontSize: '1.1em'}}
+                        tabIndex='0'
                         />
+                      {/*here we create a button (link) to redirect them to the relevant wikipedia page*/}
                       <a
                         href={info.url}
                         target="_blank"
                         className="infoButton"
+                        aria-label={`click to learn more about ${selectedPlace.name}`}
+                        tabIndex='0'
                       >
                         {info.readMore}</a>
                     </span>
