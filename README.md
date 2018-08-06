@@ -20,7 +20,7 @@ and __Wikipedia API__ to create an interactive and informative environment.
 ## Structure
 
 The project has the below structure :
-[stucture](https://drive.google.com/file/d/1NfGftZR9s1NuHB_AP4WTD3vQy3s7H3aq/view?usp=sharing)
+[stucture](https://photos.app.goo.gl/FeKzmBWxtr94ANE36)
 
 Screenshot:
 [Preview](https://drive.google.com/file/d/1GBO6OPivPmrPVq0MoZgqiW4klMrZ98G-/view?usp=sharing)
