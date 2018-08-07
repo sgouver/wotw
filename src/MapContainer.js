@@ -61,6 +61,7 @@ export class MapContainer extends React.Component {
             <div
               style={{
                 width: '250px',
+                height: '300px',
                 margin: 'auto',
                 textAlign: 'center',
                 display:'block',
@@ -79,7 +80,10 @@ export class MapContainer extends React.Component {
                       {/*here we pass a snippet text fetched from wikipedia*/}
                       <p
                         dangerouslySetInnerHTML={ {__html: wikiInfo} }
-                        style={{fontSize: '1.1em'}}
+                        style={{
+                          fontSize: '1.1em',
+                          padding: '0 5px 7px 0' 
+                        }}
                         tabIndex='0'
                         />
                       {/*here we create a button (link) to redirect them to the relevant wikipedia page*/}
